@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Yahtzee</RootNamespace>
+    <AssemblyName>Yahtzee.Tests</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Yahtzee\Yahtzee.csproj" />
+  </ItemGroup>
+
+</Project>
