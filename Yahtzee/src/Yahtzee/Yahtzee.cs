@@ -1,3 +1,5 @@
+using System.Collections;
+
 public class Yahtzee
 {
     protected int[] dice;
@@ -39,7 +41,7 @@ public class Yahtzee
     public int SameTarget(int target)
     {
         int sum = 0;
-        for (int i = 0; i != 5; i++)
+        for (int i = 0; i != dice.Length; i++)
         {
             if (dice[i] == target)
             {
@@ -49,18 +51,15 @@ public class Yahtzee
         return sum;
     }
 
-    public static int ScorePair(int d1, int d2, int d3, int d4, int d5)
+    public int ScorePair()
     {
         int[] counts = new int[6];
-        counts[d1 - 1]++;
-        counts[d2 - 1]++;
-        counts[d3 - 1]++;
-        counts[d4 - 1]++;
-        counts[d5 - 1]++;
-        int at;
-        for (at = 0; at != 6; at++)
-            if (counts[6 - at - 1] == 2)
-                return (6 - at) * 2;
+        foreach (int die in dice)
+            counts[die - 1]++;
+
+        for (int i = 0; i != dice.Length+1; i++)
+            if (counts[dice.Length - i] >= 2)
+                return (dice.Length + 1 - i) * 2;
         return 0;
     }
 

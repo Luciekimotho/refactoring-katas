@@ -72,9 +72,9 @@ public class YahzeeTest
     [Test]
     public void one_pair()
     {
-        Assert.AreEqual(6, Yahtzee.ScorePair(3, 4, 3, 5, 6));
-        Assert.AreEqual(10, Yahtzee.ScorePair(5, 3, 3, 3, 5));
-        Assert.AreEqual(12, Yahtzee.ScorePair(5, 3, 6, 6, 5));
+        Assert.AreEqual(6, new Yahtzee(3, 4, 3, 5, 6).ScorePair());
+        Assert.AreEqual(10, new Yahtzee(5, 3, 3, 3, 5).ScorePair());
+        Assert.AreEqual(12, new Yahtzee(5, 3, 6, 6, 5).ScorePair());
     }
 
     [Test]
